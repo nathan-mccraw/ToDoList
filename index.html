@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>To-Do List Project -- McCraw</title>
-    <link rel = "stylesheet" href = "style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1 id = "userName">Nathan's</h1>
-    <h3>To-Do List</h3>
-    <p id = "activityType">Grocery List</p>
-    <!-- checklist image
-    textbox
-    tasklist -->
-
-    
-</body>
-<footer><p id = "photoFooter">credit for <a href = "https://unsplash.com/photos/GOQ32dlahDk">photograph</a>: Victor Santos @Vtrsnts</p></footer>
-<script src = "script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <container>
+      <h1 class="appTitle" id="userName">Nathan's</h1>
+      <h2 class="appTitle">To-Do List</h2>
+      <p class="appTitle" id="activityType">Grocery Shopping</p>
+      <!-- checklist image -->
+      <form class="textTask">
+        <input type="text" placeholder="Enter text" class="listTask" />
+      </form>
+      <div id="taskGroup">
+        <div class="strikeTask"><input type="checkbox" /></div>
+        <div class="listTask" id="listElement">Task #1</div>
+        <div class="removeTask">
+          <button type="radio" class="removeButton">x</button>
+        </div>
+      </div>
+    </container>
+    <script src="script.js"></script>
+  </body>
 </html>

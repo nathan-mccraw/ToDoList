@@ -1,16 +1,35 @@
-body { 
-    text-align : center;
-    font-family: 'Shadows Into Light', cursive;
-    /* background : url(photos/ToDoList\ Background.jpg);
-    background-size : 60%; */
+body {
+  text-align: center;
+  font-family: "Shadows Into Light", cursive;
 }
 
 h1 {
-    font-family: 'Gloria Hallelujah', cursive;
-    text-transform: uppercase;
+  font-family: "Gloria Hallelujah", cursive;
+  text-transform: uppercase;
+  height: 45px;
 }
 
-#photoFooter {
-    text-align: right;
-    font-size : 60%;
+.appTitle {
+  margin: 0 auto;
+}
+
+#activityType {
+  margin-bottom: 10px;
+}
+
+.listTask {
+  font-family: "Shadowns Into Light", cursive;
+  width: 250px;
+  background-color: powderblue;
+}
+
+.removeButton {
+  border: none;
+  background: none;
+  color: rgba(0, 0, 0, 0.664);
+}
+
+#listElement.listTask {
+  width: 250px;
+  text-align: left;
 }
