@@ -24,18 +24,28 @@
 //-circular button on right with "x" that deletes array at that index <- delete function ?
 
 const addButton = document.getElementById("addButton");
-const addByTxt = document.getElementById("addByTxt");
+const addByTxt = document.getElementById("addByText");
 
 addButton.addEventListener("click", addTask);
-addByTxt.addEventListener("submit", addTask);
+
+addByTxt.addEventListener("submit", (event) => {
+  event.preventDefault();
+  addTask();
+  todoInput.value = "";
+});
 
 function addTask() {
-  //   prompt(todoInput.value);
-  const newTask = document.getElementById("todoInput").nodeValue;
+  const newTask = document.createTextNode(todoInput.value);
   const newLI = document.createElement("li");
-  const ULname = document.getElementById("taskListUL");
-  newLI.appendChild(newTask);
-  ULname.appendChild(newLI);
 
-  //   e.preventDefault();
+  const currentUL = document.getElementById("taskListUL");
+  newLI.appendChild(newTask);
+
+  const newCheckBox = document.createElement("input");
+  newCheckBox.setAttribute("type", "checkbox");
+
+  const newDeleteButton = document.createElement("button");
+
+  newLI.insertAdjacentElement("afterbegin", newCheckBox);
+  currentUL.insertAdjacentElement("afterbegin", newLI);
 }
