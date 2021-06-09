@@ -22,14 +22,3 @@ h1 {
   width: 250px;
   background-color: powderblue;
 }
-
-.removeButton {
-  border: none;
-  background: none;
-  color: rgba(0, 0, 0, 0.664);
-}
-
-#listElement.listTask {
-  width: 250px;
-  text-align: left;
-}

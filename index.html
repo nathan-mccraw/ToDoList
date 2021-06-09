@@ -9,23 +9,24 @@
       rel="stylesheet"
     />
   </head>
+  <header>
+    <h1 class="appTitle" id="userName">Nathan's</h1>
+    <h2 class="appTitle">To-Do List</h2>
+    <p class="appTitle" id="activityType">Grocery Shopping</p>
+    <!-- checklist image -->
+    <form class="textTask" id="addByText">
+      <input
+        type="text"
+        placeholder="Enter text"
+        class="listTask"
+        id="todoInput"
+      />
+      <input type="button" value="Add" id="addButton" />
+    </form>
+  </header>
   <body>
-    <container>
-      <h1 class="appTitle" id="userName">Nathan's</h1>
-      <h2 class="appTitle">To-Do List</h2>
-      <p class="appTitle" id="activityType">Grocery Shopping</p>
-      <!-- checklist image -->
-      <form class="textTask">
-        <input type="text" placeholder="Enter text" class="listTask" />
-      </form>
-      <div id="taskGroup">
-        <div class="strikeTask"><input type="checkbox" /></div>
-        <div class="listTask" id="listElement">Task #1</div>
-        <div class="removeTask">
-          <button type="radio" class="removeButton">x</button>
-        </div>
-      </div>
-    </container>
+    <ul id="taskListUL"></ul>
+    <container id="taskListContainer"> </container>
     <script src="script.js"></script>
   </body>
 </html>
