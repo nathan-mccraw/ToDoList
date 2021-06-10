@@ -17,6 +17,12 @@ li {
   list-style-type: none;
 }
 
+li > button {
+  border: none;
+  background: none;
+  color: red;
+}
+
 #activityType {
   margin-bottom: 10px;
 }

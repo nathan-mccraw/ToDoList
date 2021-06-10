@@ -13,20 +13,22 @@
     <h1 class="appTitle" id="userName">Nathan's</h1>
     <h2 class="appTitle">To-Do List</h2>
     <p class="appTitle" id="activityType">Grocery Shopping</p>
-    <!-- checklist image -->
+
     <form class="textTask" id="addByText">
-      <input
-        type="text"
-        placeholder="Enter text"
-        class="listTask"
-        id="todoInput"
-      />
-      <input type="button" value="Add" id="addButton" />
+      <div id="inputGroup">
+        <input
+          type="text"
+          placeholder="Enter text"
+          class="inputTextGroup"
+          id="todoInput"
+        />
+        <input type="button" value="Add" id="addButton" />
+      </div>
     </form>
   </header>
   <body>
     <ul id="taskListUL"></ul>
-    <container id="taskListContainer"> </container>
+    <input type="button" value="Clear All" id="clearList" />
     <script src="script.js"></script>
   </body>
 </html>

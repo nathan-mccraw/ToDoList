@@ -25,13 +25,17 @@
 
 const addButton = document.getElementById("addButton");
 const addByTxt = document.getElementById("addByText");
+const clearButton = document.getElementById("clearList");
 
+clearButton.addEventListener(
+  "click",
+  () => (document.getElementById("taskListUL").innerHTML = "")
+);
 addButton.addEventListener("click", addTask);
 
 addByTxt.addEventListener("submit", (event) => {
   event.preventDefault();
   addTask();
-  todoInput.value = "";
 });
 
 function addTask() {
@@ -45,7 +49,11 @@ function addTask() {
   newCheckBox.setAttribute("type", "checkbox");
 
   const newDeleteButton = document.createElement("button");
+  newDeleteButton.textContent = "x";
 
   newLI.insertAdjacentElement("afterbegin", newCheckBox);
+  newLI.insertAdjacentElement("beforeend", newDeleteButton);
   currentUL.insertAdjacentElement("afterbegin", newLI);
+
+  todoInput.value = "";
 }
