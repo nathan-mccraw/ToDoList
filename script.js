@@ -2,7 +2,7 @@
 // let userName = prompt("Enter your first name: ");
 // while (!userName) userName = prompt("Enter your first name:");
 
-// //use drop-down list with a custom option at the bottom
+// instead of prompt, use drop-down list with a custom option at the bottom
 // let activity = prompt("Enter the activity (ie grocery shopping, chores, etc):");
 
 // document.getElementById("userName").textContent = userName + "'s";
@@ -26,11 +26,12 @@
 const addButton = document.getElementById("addButton");
 const addByTxt = document.getElementById("addByText");
 const clearButton = document.getElementById("clearList");
+let taskCounter = 1;
 
-clearButton.addEventListener(
-  "click",
-  () => (document.getElementById("taskListUL").innerHTML = "")
-);
+clearButton.addEventListener("click", () => {
+  document.getElementById("taskListUL").innerHTML = "";
+  taskCounter = 1;
+});
 addButton.addEventListener("click", addTask);
 
 addByTxt.addEventListener("submit", (event) => {
@@ -41,19 +42,44 @@ addByTxt.addEventListener("submit", (event) => {
 function addTask() {
   const newTask = document.createTextNode(todoInput.value);
   const newLI = document.createElement("li");
+  newLI.id = `taskText${taskCounter}`;
+  newLI.class = `task${taskCounter}`;
 
   const currentUL = document.getElementById("taskListUL");
   newLI.appendChild(newTask);
 
   const newCheckBox = document.createElement("input");
-  newCheckBox.setAttribute("type", "checkbox");
+  createCheckBox(newCheckBox);
 
   const newDeleteButton = document.createElement("button");
-  newDeleteButton.textContent = "x";
+  createDeleteButton(newDeleteButton);
 
   newLI.insertAdjacentElement("afterbegin", newCheckBox);
   newLI.insertAdjacentElement("beforeend", newDeleteButton);
   currentUL.insertAdjacentElement("afterbegin", newLI);
 
   todoInput.value = "";
+  todoInput.focus();
+  taskCounter++;
 }
+
+function createDeleteButton(newDeleteButton) {
+  newDeleteButton.textContent = "x";
+  newDeleteButton.id = `deleteButton${taskCounter}`;
+  newDeleteButton.class = `task${taskCounter}`;
+  newDeleteButton.addEventListener("click", removeTask(taskCounter));
+}
+
+function createCheckBox(newCheckBox) {
+  newCheckBox.setAttribute("type", "checkbox");
+  newCheckBox.id = `checkBox${taskCounter}`;
+  newCheckBox.class = `task${taskCounter}`;
+  newCheckBox.addEventListener("click", strikeTask(taskCounter));
+}
+
+function removeTask(index) {
+  let taskToBeRemoved = document.querySelectorAll(`#task${index}`);
+  taskToBeRemoved.remove;
+}
+
+function strikeTask(index) {}
