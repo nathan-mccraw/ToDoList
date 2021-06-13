@@ -1,5 +1,8 @@
 body {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: "Shadows Into Light", cursive;
   background-image: url("photos/ToDoListBackground2.jpg");
   font-size: larger;
@@ -15,14 +18,43 @@ h1 {
   margin: 0 auto;
 }
 
+.inputTextGroup {
+  border: none;
+}
+
+#todoInput {
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+}
+
+#addButton {
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 0;
+  width: 350px;
+}
+
 li {
   list-style-type: none;
+  width: 350px;
+  text-align: left;
+  background-color: rgba(128, 128, 128, 0.596);
 }
 
 li > button {
   border: none;
   background: none;
   color: red;
+  float: right;
+  margin: 2% 0;
 }
 
 #activityType {
@@ -37,14 +69,6 @@ li > button {
 
 .completedTask {
   text-decoration: line-through;
-}
-
-div i {
-  margin-right: 0px;
-  border-right: 0px;
-  padding: 2px;
-  background-color: white;
-  border: solid black 1px;
 }
 
 footer {

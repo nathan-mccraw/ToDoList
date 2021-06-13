@@ -1,16 +1,14 @@
-alert("You can edit your name and the title of the list");
-
 const addButton = document.getElementById("addButton");
-const addByTxt = document.getElementById("addByText");
+const addByEnter = document.getElementById("addByText");
 const clearButton = document.getElementById("clearList");
-const currentUL = document.getElementById("taskListUL");
+const UlNode = document.getElementById("taskListUL");
 
 clearButton.addEventListener("click", () => {
   document.getElementById("taskListUL").innerHTML = "";
 });
 addButton.addEventListener("click", addTask);
 
-addByTxt.addEventListener("submit", (event) => {
+addByEnter.addEventListener("submit", (event) => {
   event.preventDefault();
   addTask();
 });
@@ -30,7 +28,7 @@ function addTask() {
 
   newLI.insertAdjacentElement("afterbegin", newCheckBox);
   newLI.insertAdjacentElement("beforeend", newDeleteButton);
-  currentUL.insertAdjacentElement("afterbegin", newLI);
+  UlNode.insertAdjacentElement("beforeend", newLI);
 
   ClearInputField(todoInput);
 }
@@ -42,6 +40,7 @@ function ClearInputField(todoInput) {
 
 function createDeleteButton(newDeleteButton) {
   newDeleteButton.textContent = "x";
+  newDeleteButton.classList.add("DeleteButton");
   newDeleteButton.addEventListener("click", function () {
     newDeleteButton.parentElement.style.display = "none";
   });
