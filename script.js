@@ -1,12 +1,4 @@
-//I don't like prompts -- possibly use a disappearing edit pencil graphic beside name that appears when hover
-// let userName = prompt("Enter your first name: ");
-// while (!userName) userName = prompt("Enter your first name:");
-
-// instead of prompt, use drop-down list with a custom option at the bottom
-// let activity = prompt("Enter the activity (ie grocery shopping, chores, etc):");
-
-// document.getElementById("userName").textContent = userName + "'s";
-// document.getElementById("activityType").textContent = activity;
+alert("You can edit your name and the title of the list");
 
 const addButton = document.getElementById("addButton");
 const addByTxt = document.getElementById("addByText");
@@ -15,7 +7,6 @@ const currentUL = document.getElementById("taskListUL");
 
 clearButton.addEventListener("click", () => {
   document.getElementById("taskListUL").innerHTML = "";
-  taskCounter = 1;
 });
 addButton.addEventListener("click", addTask);
 
@@ -25,6 +16,7 @@ addByTxt.addEventListener("submit", (event) => {
 });
 
 function addTask() {
+  if (todoInput.value === "") return;
   const newTask = document.createTextNode(todoInput.value);
   const newLI = document.createElement("li");
 
@@ -40,6 +32,10 @@ function addTask() {
   newLI.insertAdjacentElement("beforeend", newDeleteButton);
   currentUL.insertAdjacentElement("afterbegin", newLI);
 
+  ClearInputField(todoInput);
+}
+
+function ClearInputField(todoInput) {
   todoInput.value = "";
   todoInput.focus();
 }

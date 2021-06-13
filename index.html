@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>To-Do List Project -- McCraw</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
+    <title>To-Do List Project -- McCraw</title>
   </head>
   <header>
-    <h1 class="appTitle" id="userName">Nathan's</h1>
+    <h1 class="appTitle" id="userName" contenteditable="true">Nathan's</h1>
     <h2 class="appTitle">To-Do List</h2>
-    <p class="appTitle" id="activityType">Grocery Shopping</p>
+    <p class="appTitle" id="activityType" contenteditable="true">Chores</p>
 
     <form class="textTask" id="addByText">
       <div id="inputGroup">
@@ -21,8 +21,7 @@
           placeholder="Enter text"
           class="inputTextGroup"
           id="todoInput"
-        />
-        <input type="button" value="Add" id="addButton" />
+        /><input type="button" value="Add" id="addButton" />
       </div>
     </form>
   </header>
@@ -31,4 +30,16 @@
     <input type="button" value="Clear All" id="clearList" />
     <script src="script.js"></script>
   </body>
+  <footer>
+    Photo by
+    <a
+      href="https://unsplash.com/@vtrsnts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      >Vitor Santos</a
+    >
+    on
+    <a
+      href="https://unsplash.com/s/photos/to-do-list?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      >Unsplash</a
+    >
+  </footer>
 </html>

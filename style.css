@@ -1,6 +1,8 @@
 body {
   text-align: center;
   font-family: "Shadows Into Light", cursive;
+  background-image: url("photos/ToDoListBackground2.jpg");
+  font-size: larger;
 }
 
 h1 {
@@ -35,4 +37,19 @@ li > button {
 
 .completedTask {
   text-decoration: line-through;
+}
+
+div i {
+  margin-right: 0px;
+  border-right: 0px;
+  padding: 2px;
+  background-color: white;
+  border: solid black 1px;
+}
+
+footer {
+  font-size: smaller;
+  position: fixed;
+  bottom: 0px;
+  text-align: right;
 }
